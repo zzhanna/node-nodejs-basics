@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import { writeFile, mkdir, access } from "node:fs/promises";
+import { writeFile, access } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
