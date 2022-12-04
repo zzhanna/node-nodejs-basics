@@ -1,7 +1,7 @@
 import { copyFile, readdir, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import checkIfFile from "../helpers/helpers.js";
+import { checkIfFile } from "../helpers/helpers.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

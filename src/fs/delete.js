@@ -1,11 +1,7 @@
 import { rm } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
-import path from "node:path";
-import checkIfFile from "../helpers/helpers.js";
+import { getPath, checkIfFile } from "../helpers/helpers.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const fileToRemovePath = path.join(__dirname, "files", "fileToRemove.txt");
+const fileToRemovePath = getPath(import.meta.url, "fileToRemove.txt");
 
 const remove = async () => {
   try {

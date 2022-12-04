@@ -1,18 +1,8 @@
 import { promises } from "node:fs";
-import { fileURLToPath } from "node:url";
-import path from "node:path";
-import checkIfFile from "../helpers/helpers.js";
+import { getPath, checkIfFile } from "../helpers/helpers.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const oldFilePath = path.join(
-  path.join(__dirname, "files"),
-  "wrongFilename.txt"
-);
-const newFilePath = path.join(
-  path.join(__dirname, "files"),
-  "properFilename.md"
-);
+const oldFilePath = getPath(import.meta.url, "wrongFilename.txt");
+const newFilePath = getPath(import.meta.url, "properFilename.md");
 
 const rename = async () => {
   try {

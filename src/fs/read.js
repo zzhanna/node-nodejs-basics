@@ -1,11 +1,7 @@
 import { readFile } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
-import path from "node:path";
-import checkIfFile from "../helpers/helpers.js";
+import { getPath, checkIfFile } from "../helpers/helpers.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const fileToReadPath = path.join(__dirname, "files", "fileToRead.txt");
+const fileToReadPath = getPath(import.meta.url, "fileToRead.txt");
 
 const read = async () => {
   try {

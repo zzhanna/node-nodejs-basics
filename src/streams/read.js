@@ -1,11 +1,8 @@
 import { createReadStream } from "node:fs";
-import { fileURLToPath } from "node:url";
-import path from "node:path";
 import { pipeline } from "node:stream/promises";
+import { getPath } from "../helpers/helpers.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const pathToFile = path.join(__dirname, "files", "fileToRead.txt");
+const pathToFile = getPath(import.meta.url, "fileToRead.txt");
 
 const read = async () => {
   const readFromFile = createReadStream(pathToFile, { encoding: "utf8" });

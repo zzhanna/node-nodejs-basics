@@ -1,12 +1,7 @@
 import { writeFile } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
-import path from "node:path";
-import checkIfFile from "../helpers/helpers.js";
+import { getPath, checkIfFile } from "../helpers/helpers.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const filePath = path.join(__dirname, "files", "fresh.txt");
+const filePath = getPath(import.meta.url, "fresh.txt");
 const fileText = "I am fresh and young";
 
 const create = async () => {
