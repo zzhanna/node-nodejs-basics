@@ -23,9 +23,8 @@ const performCalculations = async () => {
     });
     workersArray.push(promise);
   }
-
   const result = await Promise.allSettled(workersArray);
-  console.log(result.map((key) => key["value"]));
+  console.log(result.map((key) => key["value"] || key["reason"]));
 };
 
 await performCalculations();
